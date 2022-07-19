@@ -46,5 +46,5 @@ public class Q_5 {
         System.out.println("small number is = "+small);
         System.out.println("large number is = "+large);
             }
-
+//ghjj
     }
