@@ -11,12 +11,34 @@ salesperson’s earnings. There’s no limit to the number of items that can be
 sold.
 Item
 Value
-1 239.99
-2 129.75
-3 99.95
-4 350.89
+    1 239.99
+    2 129.75
+    3 99.95
+    4 350.89
  */
 package java_how_to_program_book.ch_4.exercise;
 
+import java.util.Scanner;
+
 public class Q_19 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int items = 0, i = 1, values, wholesales = 0, weeklySalary = 200;
+        float commision, earning;
+        System.out.println("Enter how many item you sale in this week");
+        items = input.nextInt();
+        if (items > 0) {
+            while (i <= items) {
+                System.out.println("Enter the value of " + i + " items");
+                values = input.nextInt();
+                wholesales = wholesales + values;
+                i++;
+            }
+            System.out.println("your wholeSales in this week is = " + wholesales);
+            commision = wholesales / 100 * 9;
+            System.out.println("you commision in this week is = " + commision);
+            earning = weeklySalary + commision;
+            System.out.println("you earning in this week is = " + earning);
+        }
+    }
 }
