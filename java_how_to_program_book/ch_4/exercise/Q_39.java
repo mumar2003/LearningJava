@@ -22,8 +22,83 @@ in industrial-strength applications.]
  */
 package java_how_to_program_book.ch_4.exercise;
 
+import java.util.Scanner;
+
 public class Q_39 {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("this program is for encrpt the ");
+        System.out.println("Please Enter the number");
+        int N = input.nextInt();
+        int R = 0, j = 1,odd=0;
+        int encrpt = 0, NewEncrpt = 0;
+        if (N >= 1000 && N <= 9999) {
+            int i = 0;
+            while (i < 4) {
+                R = (N % 10 + 7) % 10;
+                System.out.println("r=" + R);
+                encrpt = encrpt + (R * j);
+                if (i == 0) {
+                    NewEncrpt = NewEncrpt + (R * 100);
+                } else if (i == 1) {
+                    NewEncrpt = NewEncrpt + (R * 1000);
+                } else if (i == 2) {
+                    NewEncrpt = NewEncrpt + (R * 1);
+                } else if (i == 3) {
+                    NewEncrpt = NewEncrpt + (R * 10);
+                }
+                i++;
+                j = j * 10;
+                N = N / 10;
+                System.out.println("N=" + N);
+                System.out.println("encrpt =" + encrpt);
+                System.out.println("NewEncrpt =" + NewEncrpt);
 
-    }
-}
+            }
+        }
+        //for decrpt the value
+        System.out.println("Please Enter the number that you want to decrpt");
+        int N2 = input.nextInt();
+        int k = 0, N3 = 0;
+        if (N2 / 1000 == 0) {
+            N2 = N2 + 1000;
+            odd=odd+10;
+        } else {
+            N2=N2;}
+            while (k < 4) {
+                if (k == 0) {
+                    N3 = N3 + ((N2 % 10) * 100);
+                } else if (k == 1) {
+                    N3 = N3 + (((N2 / 10) % 10) * 1000);
+                } else if (k == 2) {
+                    N3 = N3 + ((N2 / 100) % 10);
+                } else if (k == 3) {
+                    N3 = N3 + ((N2 / 1000) * 10);
+                }
+
+                k++;
+            }
+
+            N3=N3-odd;
+            System.out.println("N3 =" + N3);
+            int l = 0, N4 = 0, m = 1;
+            int Rs = 0;
+            while (l < 4) {
+                Rs = (N3 % 10 - 7);
+                System.out.println("Rs =" + Rs);
+                if (Rs < 0) {
+                    Rs = 10 + Rs;
+                    System.out.println(Rs);
+                }
+                N4 = N4 + Rs * m;
+                System.out.println("N4 =" + N4);
+                l++;
+                m = m * 10;
+                N3 = N3 / 10;
+
+            }
+
+            }
+        }
+
+
