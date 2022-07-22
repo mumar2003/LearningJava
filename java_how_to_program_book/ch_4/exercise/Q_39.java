@@ -30,7 +30,7 @@ public class Q_39 {
         System.out.println("this program is for encrpt the ");
         System.out.println("Please Enter the number");
         int N = input.nextInt();
-        int R = 0, j = 1,odd=0;
+        int R , j = 1,odd=0;
         int encrpt = 0, NewEncrpt = 0;
         if (N >= 1000 && N <= 9999) {
             int i = 0;
@@ -43,7 +43,7 @@ public class Q_39 {
                 } else if (i == 1) {
                     NewEncrpt = NewEncrpt + (R * 1000);
                 } else if (i == 2) {
-                    NewEncrpt = NewEncrpt + (R * 1);
+                    NewEncrpt = NewEncrpt + (R);
                 } else if (i == 3) {
                     NewEncrpt = NewEncrpt + (R * 10);
                 }
@@ -63,8 +63,7 @@ public class Q_39 {
         if (N2 / 1000 == 0) {
             N2 = N2 + 1000;
             odd=odd+10;
-        } else {
-            N2=N2;}
+        }
             while (k < 4) {
                 if (k == 0) {
                     N3 = N3 + ((N2 % 10) * 100);
@@ -82,7 +81,7 @@ public class Q_39 {
             N3=N3-odd;
             System.out.println("N3 =" + N3);
             int l = 0, N4 = 0, m = 1;
-            int Rs = 0;
+            int Rs;
             while (l < 4) {
                 Rs = (N3 % 10 - 7);
                 System.out.println("Rs =" + Rs);
