@@ -23,9 +23,49 @@
 
  */
 package java_how_to_program_book.ch_4.exercise;
-
+import java.math.BigInteger;
+import java.util.Scanner;
 public class Q_38 {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please Enter the Number");
+        int n = input.nextInt();
+        int factorials = 1;
+        int e=1;
+        BigInteger factorial = BigInteger.valueOf(1);
+        if (n >=1) {
+            while (n >= 1) {
+                factorial = factorial.multiply(BigInteger.valueOf(n));
+                n--;
+            }
+            System.out.println(factorial);
+        } else {
+            System.out.println("your number is negative");
+        }
 
+   /* 2. Write an application that estimates the value of the mathematical
+    constant e by using the following formula. Allow the user to
+    enter the number of terms to calculate.
+            e=(1/1!)+(2/2!)+(3/3!)+......
+    */
+
+        System.out.println("enter the number of terms to calculate");
+        int term = input.nextInt();
+        while (term >= 0) {
+            n = term;
+            if (n >=1) {
+                while (n >= 1) {
+                    factorials = factorials * n;
+                    n--;
+                }
+                System.out.println(factorials);
+
+                e=e+1/factorials;
+                System.out.println(e);
+                factorials=1;
+                term--;
+
+            }
+        }
     }
 }
